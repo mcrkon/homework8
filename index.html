@@ -12,7 +12,7 @@
 
     <h1>Object List</h1>
 
-     <script id="tableTemplate" type="text/x-handlebars-template">
+     <script id="entryTemplate" type="text/x-handlebars-template">
       <button type="button" id="new-person">Add New Person</button>
 
       <table>
@@ -42,9 +42,11 @@
         </tbody>
       </table>
     </script>
+   source);
 
 
-    <script id="formTemplate" type="text/x-handlebars-template">
+
+    <script id="entryTemplate" type="text/x-handlebars-template">
       <form>
         <label for="name">Name</label>
         <input type="text" id="name" value="{{name}}" />

@@ -154,3 +154,26 @@ function addOrEditPerson( person ) {
     }
 }
 })();
+
+var source   = $("#entry-template").html();
+var template = Handlebars.compile(source);
+
+
+
+function showAddForm( ) {
+    var html = entryTemplate( {} );
+    $('#main').html( html );
+    $('#submit').one( 'click', addPerson );
+    $('#cancel').one( 'click', displayPeople );
+  
+  function showEditForm( evt ) {
+    var btn = evt.target;
+    var id = $(btn).attr( 'data-id' );
+    var person = people.find( function( person ) {
+        return person._id === id;
+    } );
+    var html = entryTemplate( person );
+    $('#main').html( html );
+    $('#submit').one( 'click', updatePerson );
+    $('#cancel').one( 'click', displayPeople );
+    evt.preventDefault( );
