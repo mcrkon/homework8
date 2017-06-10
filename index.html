@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Homework 8</title>
+    <script src="jquery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src=""
+     <script src="handlebars.js"></script>
+  </head>
+  <body>
+
+    <h1>Object List</h1>
+
+     <script id="tableTemplate" type="text/x-handlebars-template">
+      <button type="button" id="new-person">Add New Person</button>
+
+      <table>
+        <thead>
+          <tr>
+            <th>
+              Name 
+            </th>
+            <th>
+              Age
+            </th>
+            <th>
+             
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+         <tr>
+              <td>{{name}}</td>
+              <td>{{age}}</td>
+              <td>
+                <button type="button" class="edit" data-id="{{_id}}">Edit</button>
+                <button type="button" class="delete" data-id="{{_id}}">Delete</button>
+              </td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </script>
+
+
+    <script id="formTemplate" type="text/x-handlebars-template">
+      <form>
+        <label for="name">Name</label>
+        <input type="text" id="name" value="{{name}}" />
+        <br />
+        <label for="age">Age</label>
+        <input type="number" id="age" value="{{age}}" />
+        <br />
+        <button type="submit" id="submit">Submit</button>
+        <button type="button" id="cancel">Cancel</button>
+      </form>
+    </script>
+
+
+
+    <div id="form-page" style="display:none">
+      <form>
+        <label for="name">Name</label>
+        <input type="text" id="name" />
+        <br />
+        <label for="age">Age</label>
+        <input type="number" id="age" />
+        <br />
+        <button type="submit" id="submit">Submit</button>
+        <button type="button" id="cancel">Cancel</button>
+      </form>
+    </div>
+
+    <script src="handlebars.js"></script>
+  </body>
+</html>
